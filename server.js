@@ -3,6 +3,8 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 const bcrypt = require('bcrypt');
 const knex = require('knex');
+// --------------CONTROLLERS---------------------
+const productCategories = require('./controllers/productCategories');
 
 const app = express();
 app.use(bodyParser.json());
@@ -18,5 +20,6 @@ const db = knex({
   }
 });
 
-db.select('test_column').from('test')
-  .then(data => console.log(data));
+app.get('/productCategories', (req, res) => {productCategories.getProductCategories(req, res, db)});
+
+app.listen(process.env.PORT || 3001);
