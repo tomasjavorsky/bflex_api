@@ -6,8 +6,6 @@ const getProductCategories = (req, res, db) => {
 
 const addProductCategory = (req, res, db) => {
   const {categoryName, categoryDescription} = req.body;
-  console.log("adding");
-  console.log(req.body);
   if(categoryName === "" || !categoryName){
     return res.status(400).json('Category Name cannot be empty');
   }
@@ -18,7 +16,6 @@ const addProductCategory = (req, res, db) => {
     })
       .into('product_categories')
       .then(trx.commit)
-      .then(res.json('Done'))
       .catch(trx.rollback)
   })
     .catch(err => res.status(400).json('Unable to add product category\n'+err));
