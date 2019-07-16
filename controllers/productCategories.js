@@ -5,14 +5,14 @@ const getProductCategories = (req, res, db) => {
 };
 
 const addProductCategory = (req, res, db) => {
-  const {categoryName, categoryDescription} = req.body;
-  if(categoryName === "" || !categoryName){
+  const {category_name, category_description} = req.body;
+  if(category_name === "" || !category_name){
     return res.status(400).json('Category Name cannot be empty');
   }
   db.transaction(trx => {
     trx.insert({
-      category_name: categoryName,
-      category_description: categoryDescription
+      category_name: category_name,
+      category_description: category_description
     })
       .into('product_categories')
       .then(trx.commit)
