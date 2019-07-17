@@ -24,5 +24,6 @@ const db = knex({
 // --------------ROUTES---------------------
 app.get('/productCategories', (req, res) => {productCategories.getProductCategories(req, res, db)});
 app.post('/productCategories', (req, res) => {productCategories.addProductCategory(req, res, db)});
+app.delete('/productCategories', (req, res) => {productCategories.removeProductCategory(req, res, db)});
 
 app.listen(process.env.PORT || 3001);
