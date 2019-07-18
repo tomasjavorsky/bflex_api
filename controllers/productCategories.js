@@ -3,7 +3,6 @@ const getProductCategories = (req, res, db) => {
     .then(data => res.json(data))
     .catch(err => res.status(400).json('unable to get product categories from database\n' + err));
 };
-
 const addProductCategory = (req, res, db) => {
   const {category_name, category_description} = req.body;
   if(category_name === "" || !category_name){
@@ -20,7 +19,6 @@ const addProductCategory = (req, res, db) => {
   })
     .catch(err => res.status(400).json('Unable to add product category\n' + err));
 };
-
 const removeProductCategory = (req, res, db) => {
   const{category_name} = req.body;
   console.log('api deleting: ' + category_name);
@@ -28,9 +26,10 @@ const removeProductCategory = (req, res, db) => {
     return res.status(400).json('Category Name cannot be empty');
   }
   else{
-    db('product_categories').where({category_name: category_name})
+    db('product_categories')
+      .where({category_name: category_name})
       .del()
-      .then(data => res.json('Deleted' + category_name))
+      .then(res.json('Deleted' + category_name))
       .catch(err => res.status(400).json('unable to delete product category from database\n' + err))
   }
 };

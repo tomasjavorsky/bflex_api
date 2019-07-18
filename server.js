@@ -3,8 +3,10 @@ const bodyParser  = require('body-parser');
 const cors        = require('cors');
 const bcrypt      = require('bcrypt');
 const knex        = require('knex');
+
 // --------------CONTROLLERS---------------------
 const productCategories = require('./controllers/productCategories');
+const products = require('./controllers/products');
 
 // --------------SETUP---------------------
 const app = express();
@@ -22,8 +24,9 @@ const db = knex({
 });
 
 // --------------ROUTES---------------------
-app.get('/productCategories', (req, res) => {productCategories.getProductCategories(req, res, db)});
-app.post('/productCategories', (req, res) => {productCategories.addProductCategory(req, res, db)});
+app.get   ('/productCategories', (req, res) => {productCategories.getProductCategories(req, res, db)});
+app.post  ('/productCategories', (req, res) => {productCategories.addProductCategory(req, res, db)});
 app.delete('/productCategories', (req, res) => {productCategories.removeProductCategory(req, res, db)});
+app.post  ('/products', (req, res) => {products.addProduct(req, res, db)});
 
 app.listen(process.env.PORT || 3001);
