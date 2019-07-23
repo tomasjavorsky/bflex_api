@@ -15,8 +15,6 @@ const addProduct = (req, res, db) => {
   if(product_category === "" || !product_category){
     return res.status(400).json('Product Category cannot be empty');
   }
-
-
   db("product_data")
     .insert({
       product_name: product_name,
@@ -31,15 +29,22 @@ const addProduct = (req, res, db) => {
     .catch(err => res.status(400).json("error inserting " + product_name + " \n"+err));
 };
 const getProducts = (req, res, db) => {
+  //eg: <endpoint>/products?category=Stavebná chémia
   const product_category = req.query.category;
   if(product_category === "" || !product_category){
-    return res.status(400).json('Product Category cannot be empty');
+    return db('product_data')
+      .select('*')
+      .then(data => res.json(data))
+      .catch(err => res.status(400).json('unable to get products from database\n' + err));
   }
-  return db('product_data')
-    .select('*')
-    //.where({product_category: product_category})
-    .then(data => res.json(data))
-    .catch(err => res.status(400).json('unable to get products from database\n' + err));
+  else{
+    console.log(product_category);
+    return db('product_data')
+      .select('*')
+      .where({product_category: product_category})
+      .then(data => res.json(data))
+      .catch(err => res.status(400).json('unable to get products from database\n' + err));
+  }
 };
 module.exports={
   addProduct: addProduct,
