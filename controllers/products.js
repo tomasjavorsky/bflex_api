@@ -44,6 +44,7 @@ const getProducts = (req, res, db) => {
     return db('product_data')
       .select('*')
       .where({product_category: product_category})
+      .orderBy('product_id', 'desc')
       .then(data => res.json(data))
       .catch(err => res.status(400).json('unable to get products from database\n' + err));
   }
