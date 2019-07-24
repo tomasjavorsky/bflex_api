@@ -34,6 +34,8 @@ const getProducts = (req, res, db) => {
   if(product_category === "" || !product_category){
     return db('product_data')
       .select('*')
+      .limit(5)
+      .orderBy('product_id', 'desc')
       .then(data => res.json(data))
       .catch(err => res.status(400).json('unable to get products from database\n' + err));
   }
