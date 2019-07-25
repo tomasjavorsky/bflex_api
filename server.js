@@ -29,5 +29,6 @@ app.post  ('/productCategories', (req, res) => {productCategories.addProductCate
 app.delete('/productCategories', (req, res) => {productCategories.removeProductCategory(req, res, db)});
 app.get   ('/products', (req, res) => {products.getProducts(req, res, db)});
 app.post  ('/products', (req, res) => {products.addProduct(req, res, db)});
+app.delete('/products', (req, res) => {products.removeProduct(req, res, db)});
 
 app.listen(process.env.PORT || 3001);
