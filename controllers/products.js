@@ -28,6 +28,7 @@ const addProduct = (req, res, db) => {
     .then(res.json(product_name + "inserted"))
     .catch(err => res.status(400).json("error inserting " + product_name + " \n"+err));
 };
+
 const getProducts = (req, res, db) => {
   //eg: <endpoint>/products?category=Stavebná chémia
   //eg: <endpoint>/products?search=roksorova tyc
@@ -51,6 +52,7 @@ const getProducts = (req, res, db) => {
       .catch(err => res.status(400).json('unable to get products from database\n' + err));
   }
 };
+
 const removeProduct = (req, res, db) => {
   const {product_id} = req.body;
   if(product_id === "" || !product_id){
