@@ -5,7 +5,6 @@ const getProductCategories = (req, res, db) => {
 };
 
 const addProductCategory = (req, res, db) => {
-  //TODO prepisat
   const {category_name, category_description} = req.body;
   if(category_name === "" || !category_name){
     return res.status(400).json('Category Name cannot be empty');
@@ -22,7 +21,6 @@ const addProductCategory = (req, res, db) => {
 
 const removeProductCategory = (req, res, db) => {
   const{category_name} = req.body;
-  console.log('api deleting: ' + category_name);
   if(category_name === "" || !category_name){
     return res.status(400).json('Category Name cannot be empty');
   }
