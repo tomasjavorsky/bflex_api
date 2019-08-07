@@ -7,6 +7,7 @@ const knex        = require('knex');
 // --------------CONTROLLERS---------------------
 const productCategories = require('./controllers/productCategories');
 const products = require('./controllers/products');
+const mailer = require('./controllers/mailer');
 
 // --------------SETUP---------------------
 const app = express();
@@ -30,5 +31,6 @@ app.delete('/productCategories', (req, res) => {productCategories.removeProductC
 app.get   ('/products', (req, res) => {products.getProducts(req, res, db)});
 app.post  ('/products', (req, res) => {products.addProduct(req, res, db)});
 app.delete('/products', (req, res) => {products.removeProduct(req, res, db)});
+app.post  ('/sendOrder', (req, res) => {mailer.sendMail(req, res)});
 
 app.listen(process.env.PORT || 3001);

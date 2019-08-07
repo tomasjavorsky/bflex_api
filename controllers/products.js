@@ -37,7 +37,6 @@ const getProducts = (req, res, db) => {
 
   switch(getSpecificity(product_category, product_searchKeyword)){
     case "category":{
-      console.log("category");
         return db('product_data')
           .select('*')
           .where({product_category: product_category})
@@ -46,7 +45,6 @@ const getProducts = (req, res, db) => {
           .catch(err => res.status(400).json('unable to get products from database\n' + err));
       }
     case "search":{
-      console.log("search: " + '%'+product_searchKeyword+'%');
       return db('product_data')
       .select('*')
         .where(function(){
@@ -59,7 +57,6 @@ const getProducts = (req, res, db) => {
           .catch(err => res.status(400).json('unable to get products from database\n' + err));
       }
     default:{
-      console.log("default");
       return db('product_data')
         .select('*')
         .limit(7)
