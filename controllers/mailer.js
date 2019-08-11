@@ -19,17 +19,18 @@ transporter.verify((error, success) => {
 });
 
 const sendMail = (req, res) => {
-  // const {
-  //   name,
-  //   email,
-  //   message,
-  // } = req.body;
+  const {
+    name,
+    email,
+    message,
+    html
+  } = req.body;
 
   var mail = {
     from: "bflex.orderInfo@gmail.com",
-    to: "dano.javorsky@gmail.com",
-    subject: "AYYY",
-    text: "AYY LMAO"
+    to: email,
+    subject: "Bflex - nová objednávka od: " + name,
+    html: html
   };
 
   transporter.sendMail(mail, (err, data) => {
