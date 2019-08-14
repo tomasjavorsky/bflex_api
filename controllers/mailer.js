@@ -23,17 +23,25 @@ const sendMail = (req, res) => {
     name,
     email,
     message,
-    html
+    htmlToBflex,
+    htmlToCustomer
   } = req.body;
 
-  var mail = {
+  var mailToBflex = {
     from: "bflex.orderInfo@gmail.com",
     to: email,
     subject: "Bflex - nová objednávka od: " + name,
-    html: html
+    html: htmlToBflex
   };
 
-  transporter.sendMail(mail, (err, data) => {
+  var mailToCustommer = {
+    from: "bflex.orderInfo@gmail.com",
+    to: email,
+    subject: "Bflex - Ďakujeme za objednávku",
+    html: htmlToCustomer
+  };
+
+  transporter.sendMail(mailToBflex, (err, data) => {
     if (err) {
       console.log("fail");
       res.json({
@@ -45,7 +53,20 @@ const sendMail = (req, res) => {
         msg: "success"
       })
     }
-  })
+  });
+  transporter.sendMail(mailToCustommer, (err, data) => {
+    if (err) {
+      console.log("fail");
+      res.json({
+        msg: "fail"
+      })
+    } else {
+      console.log("success");
+      res.json({
+        msg: "success"
+      })
+    }
+  });
 };
 
 module.exports={
