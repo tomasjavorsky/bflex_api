@@ -9,6 +9,7 @@ const productCategories = require('./controllers/productCategories');
 const products = require('./controllers/products');
 const mailer = require('./controllers/mailer');
 const jobListings = require('./controllers/jobListings');
+const downloadFiles = require('./controllers/downloadFiles');
 
 // --------------SETUP---------------------
 const app = express();
@@ -36,5 +37,8 @@ app.post  ('/sendOrder', (req, res) => {mailer.sendMail(req, res)});
 app.get   ('/jobListings', (req, res) => {jobListings.getJobs(req, res, db)});
 app.post  ('/jobListings', (req, res) => {jobListings.addJob(req, res, db)});
 app.delete('/jobListings', (req, res) => {jobListings.removeJob(req, res, db)});
+app.get   ('/downloadFiles', (req, res) => {downloadFiles.getFiles(req, res, db)});
+app.post  ('/downloadFiles', (req, res) => {downloadFiles.addFile(req, res, db)});
+app.delete('/downloadFiles', (req, res) => {downloadFiles.removeFile(req, res, db)});
 
 app.listen(process.env.PORT || 3001);
