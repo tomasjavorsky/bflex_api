@@ -29,7 +29,7 @@ const sendMail = (req, res) => {
 
   var mailToBflex = {
     from: "bflex.orderInfo@gmail.com",
-    to: email,
+    to: "info@bflex.sk",
     subject: "Bflex - nová objednávka od: " + name,
     html: htmlToBflex
   };
