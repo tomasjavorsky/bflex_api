@@ -13,13 +13,7 @@ const downloadFiles = require('./controllers/downloadFiles');
 const user = require('./controllers/user');
 
 // --------------SETUP---------------------
-let user_login = "";
-let user_password = "";
-setUser = (login, password) => {
-  user_login = login;
-  user_password = password;
-};
-this.setUser = this.setUser.bind(this);
+
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -33,8 +27,6 @@ const db = knex({
     database: 'bflexdb'
   }
 });
-
-user.checkLogin(req, res,"bflexAdministrator","$2a$10$iH1IpBAPu6owcKpDASBwD.K.6ov85syxg4UVOxHgtMqxsuVvNfuFW", db).then(data => console.log(data))
 
 // --------------ROUTES---------------------
 app.get   ('/productCategories', (req, res) => {productCategories.getProductCategories(req, res, db)});
