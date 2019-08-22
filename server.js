@@ -13,6 +13,13 @@ const downloadFiles = require('./controllers/downloadFiles');
 const user = require('./controllers/user');
 
 // --------------SETUP---------------------
+let user_login = "";
+let user_password = "";
+setUser = (login, password) => {
+  user_login = login;
+  user_password = password;
+};
+this.setUser = this.setUser.bind(this);
 const app = express();
 app.use(bodyParser.json());
 app.use(cors());
@@ -26,6 +33,8 @@ const db = knex({
     database: 'bflexdb'
   }
 });
+
+user.checkLogin(req, res,"bflexAdministrator","$2a$10$iH1IpBAPu6owcKpDASBwD.K.6ov85syxg4UVOxHgtMqxsuVvNfuFW", db).then(data => console.log(data))
 
 // --------------ROUTES---------------------
 app.get   ('/productCategories', (req, res) => {productCategories.getProductCategories(req, res, db)});
@@ -41,6 +50,6 @@ app.delete('/jobListings', (req, res) => {jobListings.removeJob(req, res, db)});
 app.get   ('/downloadFiles', (req, res) => {downloadFiles.getFiles(req, res, db)});
 app.post  ('/downloadFiles', (req, res) => {downloadFiles.addFile(req, res, db)});
 app.delete('/downloadFiles', (req, res) => {downloadFiles.removeFile(req, res, db)});
-app.post  ('/user', (req, res) => {user.userLogin(req, res, db)});
+app.post  ('/user', (req, res) => {user.userLogin(req, res, db, setUser)});
 
 app.listen(process.env.PORT || 3001);
