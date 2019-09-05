@@ -40,7 +40,7 @@ const getProducts = (req, res, db) => {
         return db('product_data')
           .select('*')
           .where({product_category: product_category})
-          .orderBy('product_id', 'desc')
+          .orderBy('product_order', 'desc')
           .then(data => res.json(data))
           .catch(err => res.status(400).json('unable to get products from database\n' + err));
       }
@@ -84,8 +84,26 @@ const removeProduct = (req, res, db) => {
     .then(res.json('Product Deleted'))
     .catch(err => res.status(400).json('unable to delete product from database\n' + err))
 };
+
+const adjustProductOrder = (req,res,db) => {
+  const {product_id, increase} = req.body;
+  if(increase){
+    db('product_data')
+      .where('product_id', '=', product_id)
+      .increment('product_order', 1)
+      .then(res.json('Product order increased'))
+      .catch(err => res.status(400).json('unable to update product order\n' + err))
+  }else{
+    db('product_data')
+      .where('product_id', '=', product_id)
+      .decrement('product_order', 1)
+      .then(res.json('Product order decreased'))
+      .catch(err => res.status(400).json('unable to update product order\n' + err))
+  }
+};
 module.exports={
   addProduct: addProduct,
   getProducts: getProducts,
   removeProduct: removeProduct,
+  adjustProductOrder: adjustProductOrder,
 };

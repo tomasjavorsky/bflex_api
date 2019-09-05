@@ -34,6 +34,7 @@ app.delete('/productCategories', (req, res) => {productCategories.removeProductC
 app.get   ('/products', (req, res) => {products.getProducts(req, res, db)});
 app.post  ('/products', (req, res) => {products.addProduct(req, res, db)});
 app.delete('/products', (req, res) => {products.removeProduct(req, res, db)});
+app.put   ('/products', (req, res) => {products.adjustProductOrder(req, res, db)});
 app.post  ('/sendOrder', (req, res) => {mailer.sendMail(req, res)});
 app.get   ('/jobListings', (req, res) => {jobListings.getJobs(req, res, db)});
 app.post  ('/jobListings', (req, res) => {jobListings.addJob(req, res, db)});
