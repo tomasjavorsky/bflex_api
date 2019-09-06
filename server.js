@@ -11,6 +11,7 @@ const mailer = require('./controllers/mailer');
 const jobListings = require('./controllers/jobListings');
 const downloadFiles = require('./controllers/downloadFiles');
 const user = require('./controllers/user');
+const contactInfo = require('./controllers/contactInfo');
 
 // --------------SETUP---------------------
 
@@ -39,6 +40,9 @@ app.post  ('/sendOrder', (req, res) => {mailer.sendMail(req, res)});
 app.get   ('/jobListings', (req, res) => {jobListings.getJobs(req, res, db)});
 app.post  ('/jobListings', (req, res) => {jobListings.addJob(req, res, db)});
 app.delete('/jobListings', (req, res) => {jobListings.removeJob(req, res, db)});
+app.get   ('/contacts', (req, res) => {contactInfo.getContacts(req, res, db)});
+app.post  ('/contacts', (req, res) => {contactInfo.addContact(req, res, db)});
+app.delete('/contacts', (req, res) => {contactInfo.removeContact(req, res, db)});
 app.get   ('/downloadFiles', (req, res) => {downloadFiles.getFiles(req, res, db)});
 app.post  ('/downloadFiles', (req, res) => {downloadFiles.addFile(req, res, db)});
 app.delete('/downloadFiles', (req, res) => {downloadFiles.removeFile(req, res, db)});
