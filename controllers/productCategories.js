@@ -33,9 +33,27 @@ const removeProductCategory = (req, res, db) => {
       .catch(err => res.status(400).json('unable to delete product category from database\n' + err))
   }
 };
+const adjustCategoryOrder = (req,res,db) => {
+  const {category_id, increase} = req.body;
+  if(increase){
+    db('product_categories')
+      .where('category_id', '=', category_id)
+      .increment('category_order', 1)
+      .then(res.json('Category order increased'))
+      .catch(err => res.status(400).json('unable to update category order\n' + err))
+  }else{
+    db('product_categories')
+      .where('category_id', '=', category_id)
+      .decrement('category_order', 1)
+      .then(res.json('Category order decreased'))
+      .catch(err => res.status(400).json('unable to update category order\n' + err))
+  }
+};
+
 
 module.exports={
   getProductCategories: getProductCategories,
   addProductCategory: addProductCategory,
-  removeProductCategory: removeProductCategory
+  removeProductCategory: removeProductCategory,
+  adjustCategoryOrder: adjustCategoryOrder,
 };
