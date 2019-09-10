@@ -34,8 +34,26 @@ const removeFile = (req, res, db) => {
   }
 };
 
+const adjustFileOrder = (req,res,db) => {
+  const {file_id, increase} = req.body;
+  if(increase){
+    db('download_files')
+      .where('file_id', '=', file_id)
+      .increment('file_order', 1)
+      .then(res.json('File order increased'))
+      .catch(err => res.status(400).json('Unable to update file order\n' + err))
+  }else{
+    db('download_files')
+      .where('file_id', '=', file_id)
+      .decrement('file_order', 1)
+      .then(res.json('File order decreased'))
+      .catch(err => res.status(400).json('Unable to update file order\n' + err))
+  }
+};
+
 module.exports={
   getFiles: getFiles,
   addFile: addFile,
-  removeFile: removeFile
+  removeFile: removeFile,
+  adjustFileOrder: adjustFileOrder,
 };
