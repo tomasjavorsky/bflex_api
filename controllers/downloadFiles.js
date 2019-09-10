@@ -1,5 +1,6 @@
 const getFiles = (req, res, db) => {
   return db.select('*').from('download_files')
+    .orderBy('file_order', 'desc')
     .then(data => res.json(data))
     .catch(err => res.status(400).json('unable to get files from database\n' + err));
 };

@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b8e90e3d-a8ca-4a76-b26f-e91ee3b0ed3e" name="Default Changelist" comment="" />
+    <list default="true" id="b8e90e3d-a8ca-4a76-b26f-e91ee3b0ed3e" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/controllers/downloadFiles.js" beforeDir="false" afterPath="$PROJECT_DIR$/controllers/downloadFiles.js" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -16,8 +18,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/server.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="764">
-              <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
+            <state relative-caret-position="400">
+              <caret line="49" column="26" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="26" />
             </state>
           </provider>
         </entry>
@@ -34,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/productCategories.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="896">
-              <caret line="50" column="2" lean-forward="true" selection-start-line="35" selection-end-line="50" selection-end-column="2" />
+            <state relative-caret-position="980">
+              <caret line="35" column="45" lean-forward="true" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
             </state>
           </provider>
         </entry>
@@ -43,8 +45,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controllers/products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="87" selection-start-line="87" selection-end-line="102" selection-end-column="2" />
+            <state>
+              <caret line="42" column="43" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="43" />
             </state>
           </provider>
         </entry>
@@ -52,8 +54,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/downloadFiles.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="429">
-              <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
+            <state relative-caret-position="56">
+              <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -93,13 +95,14 @@
         <option value="$PROJECT_DIR$/controllers/products.js" />
         <option value="$PROJECT_DIR$/controllers/contactInfo.js" />
         <option value="$PROJECT_DIR$/controllers/productCategories.js" />
-        <option value="$PROJECT_DIR$/controllers/downloadFiles.js" />
         <option value="$PROJECT_DIR$/server.js" />
+        <option value="$PROJECT_DIR$/controllers/downloadFiles.js" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="-7" />
+  <component name="ProjectFrameBounds">
+    <option name="x" value="174" />
+    <option name="y" value="96" />
     <option name="width" value="1521" />
     <option name="height" value="1167" />
   </component>
@@ -247,12 +250,12 @@
       <workItem from="1567842915621" duration="3689000" />
       <workItem from="1567851948347" duration="610000" />
       <workItem from="1567856466769" duration="22000" />
-      <workItem from="1568129838829" duration="1018000" />
+      <workItem from="1568129838829" duration="3458000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="143024000" />
+    <option name="totallyTimeSpent" value="145464000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -264,9 +267,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1176" extended-state="6" />
+    <frame x="174" y="96" width="1521" height="1167" extended-state="0" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.12164297" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15566038" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -280,7 +284,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007962" side_tool="true" weight="0.33173078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49920383" visible="true" weight="0.32843137" />
+      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.49920383" visible="true" weight="0.3313551" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -339,27 +343,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/products.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="87" selection-start-line="87" selection-end-line="102" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controllers/productCategories.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="896">
-          <caret line="50" column="2" lean-forward="true" selection-start-line="35" selection-end-line="50" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/server.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="764">
-          <caret line="50" column="34" selection-start-line="50" selection-start-column="34" selection-end-line="50" selection-end-column="34" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/user.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="420">
@@ -367,10 +350,31 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/server.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="400">
+          <caret line="49" column="26" selection-start-line="49" selection-start-column="13" selection-end-line="49" selection-end-column="26" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/products.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state>
+          <caret line="42" column="43" lean-forward="true" selection-start-line="42" selection-start-column="10" selection-end-line="42" selection-end-column="43" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controllers/productCategories.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="980">
+          <caret line="35" column="45" lean-forward="true" selection-start-line="35" selection-start-column="45" selection-end-line="35" selection-end-column="45" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/controllers/downloadFiles.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="429">
-          <caret line="57" column="35" selection-start-line="57" selection-start-column="35" selection-end-line="57" selection-end-column="35" />
+        <state relative-caret-position="56">
+          <caret line="2" column="24" selection-start-line="2" selection-start-column="24" selection-end-line="2" selection-end-column="24" />
         </state>
       </provider>
     </entry>
