@@ -104,7 +104,7 @@ const adjustProductOrder = (req,res,db) => {
 
 const getEachCategoryImages = (req,res,db) => {
 
-  db.raw("select distinct on (category_id) category_id, category_name, category_order, product_image from product_data full outer join product_categories on product_data.product_category = product_categories.category_name order by category_order")
+  db.raw("select * from (select distinct on (category_id) category_id, category_name, category_order, product_image from product_data full outer join product_categories on product_data.product_category = product_categories.category_name) t order by category_order")
     .then(data => res.json(data))
     .catch(err => res.status(400).json('unable to get category images from database\n' + err));
 };
