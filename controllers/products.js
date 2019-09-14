@@ -104,10 +104,11 @@ const adjustProductOrder = (req,res,db) => {
 
 const getEachCategoryImages = (req,res,db) => {
   db('product_data')
-    .join('product_categories', 'product_data.product_category', '=', 'product_categories.category_name')
-    .select('product_category', 'product_image', 'category_order')
+    //.join('product_categories', 'product_data.product_category', '=', 'product_categories.category_name')
+    //.select('product_category', 'product_image', 'category_order')
+    .select('product_category', 'product_image')
     .distinct('product_category')
-    .orderBy('category_order')
+    //.orderBy('category_order')
     .then(data => res.json(data))
     .catch(err => res.status(400).json('unable to get category images from database\n' + err));
 };
