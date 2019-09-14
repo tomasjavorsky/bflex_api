@@ -49,5 +49,6 @@ app.post  ('/downloadFiles',      (req, res) => {downloadFiles.addFile(req, res,
 app.delete('/downloadFiles',      (req, res) => {downloadFiles.removeFile(req, res, db)});
 app.put   ('/downloadFiles',      (req, res) => {downloadFiles.adjustFileOrder(req, res, db)});
 app.post  ('/user',               (req, res) => {user.userLogin(req, res, db, setUser)});
+app.get   ('/categoryImages',     (req, res) => {products.getEachCategoryImages(req, res, db)});
 
 app.listen(process.env.PORT || 3001);

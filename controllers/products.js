@@ -101,9 +101,21 @@ const adjustProductOrder = (req,res,db) => {
       .catch(err => res.status(400).json('unable to update product order\n' + err))
   }
 };
+
+const getEachCategoryImages = (req,res,db) => {
+  db('product_data')
+    .join('product_categories', 'product_data.product_category', '=', 'product_categories.category_name')
+    .select('product_category', 'product_image', 'category_order')
+    .distinct('product_category')
+    .orderBy('category_order')
+    .then(data => res.json(data))
+    .catch(err => res.status(400).json('unable to get category images from database\n' + err));
+};
+
 module.exports={
   addProduct: addProduct,
   getProducts: getProducts,
   removeProduct: removeProduct,
   adjustProductOrder: adjustProductOrder,
+  getEachCategoryImages: getEachCategoryImages,
 };
