@@ -45,8 +45,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/controllers/products.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="168">
-              <caret line="107" column="6" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
+            <state relative-caret-position="153">
+              <caret line="106" column="207" selection-start-line="106" selection-start-column="207" selection-end-line="106" selection-end-column="207" />
             </state>
           </provider>
         </entry>
@@ -101,10 +101,10 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="72" />
-    <option name="y" value="147" />
-    <option name="width" value="1521" />
-    <option name="height" value="1167" />
+    <option name="x" value="669" />
+    <option name="y" value="148" />
+    <option name="width" value="1224" />
+    <option name="height" value="1193" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
@@ -252,12 +252,12 @@
       <workItem from="1567856466769" duration="22000" />
       <workItem from="1568129838829" duration="4054000" />
       <workItem from="1568314324120" duration="28000" />
-      <workItem from="1568466676010" duration="2307000" />
+      <workItem from="1568466676010" duration="3355000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="148395000" />
+    <option name="totallyTimeSpent" value="149443000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -269,10 +269,10 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="50" y="467" width="1521" height="1167" extended-state="0" />
+    <frame x="669" y="148" width="1224" height="1193" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.15566038" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19460826" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -286,7 +286,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Event Log" order="9" sideWeight="0.5007962" side_tool="true" weight="0.33173078" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49920383" visible="true" weight="0.330366" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.49920383" visible="true" weight="0.32208294" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -375,8 +375,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/controllers/products.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="168">
-          <caret line="107" column="6" selection-start-line="107" selection-start-column="6" selection-end-line="107" selection-end-column="6" />
+        <state relative-caret-position="153">
+          <caret line="106" column="207" selection-start-line="106" selection-start-column="207" selection-end-line="106" selection-end-column="207" />
         </state>
       </provider>
     </entry>
