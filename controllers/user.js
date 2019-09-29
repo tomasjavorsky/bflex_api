@@ -1,22 +1,15 @@
-const userLogin = (req, res, db) => {
+const checkLogin = (req, res) => {
   const {
     user_login,
-    user_hash
+    user_password
   } = req.body;
-
-  return db.select('user_login').from('user_info')
-    .where({user_login: user_login, user_hash: user_hash})
-    .then(data => res.json(data))
-    .catch(err => res.status(400).json('unable to get user info from database\n' + err));
-};
-
-const checkLogin = (user_login, user_hash, db) => {
-  db.select('user_login').from('user_info')
-    .where({user_login: user_login, user_hash: user_hash})
-    .then(data => res.json(data))
+  if(user_login === process.env.USER_LOGIN && user_password === process.env.USER_PASSWORD){
+    res.send({ loginStatus: 'ok' });
+  }else{
+    res.send({ loginStatus: 'wrong login' });
+  }
 };
 
 module.exports={
-  userLogin: userLogin,
   checkLogin: checkLogin,
 };

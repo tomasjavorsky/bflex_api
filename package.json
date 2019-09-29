@@ -2,7 +2,6 @@
   "name": "bflex_api",
   "version": "0.1.0",
   "dependencies": {
-    "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cors": "^2.8.5",
     "express": "^4.17.1",

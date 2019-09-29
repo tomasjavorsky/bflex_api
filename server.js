@@ -1,7 +1,6 @@
 const express     = require('express');
 const bodyParser  = require('body-parser');
 const cors        = require('cors');
-const bcrypt      = require('bcrypt');
 const knex        = require('knex');
 
 // --------------CONTROLLERS---------------------
@@ -48,7 +47,7 @@ app.get   ('/downloadFiles',      (req, res) => {downloadFiles.getFiles(req, res
 app.post  ('/downloadFiles',      (req, res) => {downloadFiles.addFile(req, res, db)});
 app.delete('/downloadFiles',      (req, res) => {downloadFiles.removeFile(req, res, db)});
 app.put   ('/downloadFiles',      (req, res) => {downloadFiles.adjustFileOrder(req, res, db)});
-app.post  ('/user',               (req, res) => {user.userLogin(req, res, db, setUser)});
+app.post  ('/user',               (req, res) => {user.checkLogin(req, res)});
 app.get   ('/categoryImages',     (req, res) => {products.getEachCategoryImages(req, res, db)});
 
 app.listen(process.env.PORT || 3001);
