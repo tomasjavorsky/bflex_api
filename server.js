@@ -11,6 +11,7 @@ const jobListings = require('./controllers/jobListings');
 const downloadFiles = require('./controllers/downloadFiles');
 const user = require('./controllers/user');
 const contactInfo = require('./controllers/contactInfo');
+const gdprText = require('./controllers/gdprText');
 
 // --------------SETUP---------------------
 
@@ -49,5 +50,7 @@ app.delete('/downloadFiles',      (req, res) => {downloadFiles.removeFile(req, r
 app.put   ('/downloadFiles',      (req, res) => {downloadFiles.adjustFileOrder(req, res, db)});
 app.post  ('/user',               (req, res) => {user.checkLogin(req, res)});
 app.get   ('/categoryImages',     (req, res) => {products.getEachCategoryImages(req, res, db)});
+app.get   ('/gdprText',           (req, res) => {gdprText.getGdprText(req, res, db)});
+app.post  ('/gdprText',           (req, res) => {gdprText.addGdprText(req, res, db)});
 
 app.listen(process.env.PORT || 3001);
