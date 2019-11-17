@@ -5,12 +5,17 @@ const getGdprText = (req, res, db) => {
 };
 
 const addGdprText = (req, res, db) => {
-  const {gdpr_text} = req.body;
+  const {gdprText} = req.body;
   console.log("adding gdpr text");
   db('gdpr')
     .insert({
-      gdpr_text: gdpr_text
+      gdpr_text: gdprText
     })
     .then(res.json("gdpr_text inserted"))
     .catch(err => res.status(400).json('Unable to add gdpr text\n' + err));
+};
+
+module.exports={
+  getGdprText: getGdprText,
+  addGdprText: addGdprText,
 };
