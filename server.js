@@ -51,6 +51,5 @@ app.put   ('/downloadFiles',      (req, res) => {downloadFiles.adjustFileOrder(r
 app.post  ('/user',               (req, res) => {user.checkLogin(req, res)});
 app.get   ('/categoryImages',     (req, res) => {products.getEachCategoryImages(req, res, db)});
 app.get   ('/gdprText',           (req, res) => {gdprText.getGdprText(req, res, db)});
-app.post  ('/gdprText',           (req, res) => {gdprText.addGdprText(req, res, db)});
 
 app.listen(process.env.PORT || 3001);
